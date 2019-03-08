@@ -1,40 +1,40 @@
 # You Don't Know JS
-# Preface
+# 序文
 
-I'm sure you noticed, but "JS" in the book series title is not an abbreviation for words used to curse about JavaScript, though cursing at the language's quirks is something we can probably all identify with!
+読者もお気づきのことでしょうが、本シリーズのタイトルにある「JS」はJavaScriptについての呪いの言葉の略語ではありません。とは言え、JavaScriptの言語的な癖は、皆さん呪いのようだとお思いのことでしょう。
 
-From the earliest days of the web, JavaScript has been a foundational technology that drives interactive experience around the content we consume. While flickering mouse trails and annoying pop-up prompts may be where JavaScript started, nearly 2 decades later, the technology and capability of JavaScript has grown many orders of magnitude, and few doubt its importance at the heart of the world's most widely available software platform: the web.
+webの創成期から、JavaScriptはweb上のコンテンツにインタラクティブ性をもたらす基礎的な技術として君臨し続けてきました。マウスにキラキラを追従させることやウザったいポップアップを出すことから始まり、それから20年が過ぎて、現在ではJavaScriptの技術と可能性は非常に大きなものとなっています。世界で最も大きなソフトウェアプラットフォームである「web」の核心部分において、JavaScriptの重要性が増していることに疑念の余地はないでしょう。
 
-But as a language, it has perpetually been a target for a great deal of criticism, owing partly to its heritage but even more to its design philosophy. Even the name evokes, as Brendan Eich once put it, "dumb kid brother" status next to its more mature older brother "Java". But the name is merely an accident of politics and marketing. The two languages are vastly different in many important ways. "JavaScript" is as related to "Java" as "Carnival" is to "Car".
+しかしプログラミング言語としては、JavaScriptは常に批判の対象になってきました。批判の一部は言語的な遺産についてのものですが、その他の大部分はJavaScriptのデザイン哲学についてのものです。名前からも連想できますが、Brendan Eichが「バカな年下の兄弟」と表現した通り、JavaScriptは年上の兄弟たる「Java」に並んで位置づけられます。しかし、JavaScriptという名前は、単なる政治的・商業的な事故でしかありません。JavaScriptとJavaは、数多くの重要な部分で、大きく異なっています。「JavaScript」と「Java」は、「Carnival」と「Car」ほど違うものです。
 
-Because JavaScript borrows concepts and syntax idioms from several languages, including proud C-style procedural roots as well as subtle, less obvious Scheme/Lisp-style functional roots, it is exceedingly approachable to a broad audience of developers, even those with just little to no programming experience. The "Hello World" of JavaScript is so simple that the language is inviting and easy to get comfortable with in early exposure.
+JavaScriptはいくつかのプログラミング言語からコンセプトや文法を借りて設計されています。誇り高きC言語スタイルの手続き型な部分もあれば、微妙に明確性に欠けたScheme/Lispスタイルの関数型な部分もあります。このためJavaScriptは、経験に乏しい初心者の開発者も含め、幅広い開発者に非常に親しみやすいものです。JavaScriptの「Hello world」は非常にシンプルなので、初心者にも広く門戸が開かれています。
 
-While JavaScript is perhaps one of the easiest languages to get up and running with, its eccentricities make solid mastery of the language a vastly less common occurrence than in many other languages. Where it takes a pretty in-depth knowledge of a language like C or C++ to write a full-scale program, full-scale production JavaScript can, and often does, barely scratch the surface of what the language can do.
+JavaScriptはおそらく初心者が手を出すのに最も簡単な言語の一つですが、言語的な奇抜さから、完全に熟達するのは他の言語に比べて非常に難しいです。CやC++で実用的なプログラムを書くためにはその言語についてかなり深い知識が必要となります。一方JavaScriptの実用的なプログラムは、JavaScriptの言語的な仕様のほんの表層部分を知っていれば書くことができます。実際に多くの実用的なプログラムはJavaScriptの表層部分のみを使って書かれています。
 
-Sophisticated concepts which are deeply rooted into the language tend instead to surface themselves in *seemingly* simplistic ways, such as passing around functions as callbacks, which encourages the JavaScript developer to just use the language as-is and not worry too much about what's going on under the hood.
+JavaScriptの深いところに根ざした洗練されたコンセプトは、簡単**に見える**ように(例えば、コールバックとして関数を渡すなど)言語を覆い隠してしまいがちです。このことは、JavaScript開発者がJavaScriptをそのまま使い、隠れた部分でJavaScriptが何をしているのかを考えさせないようにしてくれます。
 
-It is simultaneously a simple, easy-to-use language that has broad appeal, and a complex and nuanced collection of language mechanics which without careful study will elude *true understanding* even for the most seasoned of JavaScript developers.
+多くの開発者に懇願されてきたシンプルで使いやすい言語は、同時に、複雑で抽象的な言語です。慎重に学習しない限り、経験豊富な開発者でも**真の理解**に達せない言語であると言うこともできます。
 
-Therein lies the paradox of JavaScript, the Achilles' Heel of the language, the challenge we are presently addressing. Because JavaScript *can* be used without understanding, the understanding of the language is often never attained.
+この点がJavaScriptの持つパラドクスであり、唯一の弱点であり、私たちが現在課題にしている点です。JavaScriptは深い知見を持たずとも使え**てしまう**ため、言語に対する真の理解に到達しないことがよく生じてしまうのです。
 
-## Mission
+## ミッション
 
-If at every point that you encounter a surprise or frustration in JavaScript, your response is to add it to the blacklist, as some are accustomed to doing, you soon will be relegated to a hollow shell of the richness of JavaScript.
+いつもそうしてしまう人もいると思いますが、JavaScriptを書いていて驚いたり不満に思った点に出くわした時、その点を見て見ぬふりをしていれば、形だけのJavaScriptの便利さのみを見るようになってしまいます。
 
-While this subset has been famously dubbed "The Good Parts", I would implore you, dear reader, to instead consider it the "The Easy Parts", "The Safe Parts", or even "The Incomplete Parts".
+この「形だけの便利さ」は広く「The Good Parts(良い部分)」と言われてきました。しかし私は、聡明な本書の読者たちにはこれを「The Easy Parts(簡単な部分)」や「The Safe Parts(安全な部分)」だと考えてほしいのです。「The Incomplete Parts(不完全な部分)」と考えていただいても差し支えありません。
 
-This *You Don't Know JavaScript* book series offers a contrary challenge: learn and deeply understand *all* of JavaScript, even and especially "The Tough Parts".
+本書 *You Don't Know Javascript* は、「The Good Parts」などとは反対の目標を提案します。すなわち、JavaScriptの*すべて*を学び、深く理解することが目標です。その中で、「The Tough Parts(難解な場所)」についても学んでいきましょう。
 
-Here, we address head on the tendency of JS developers to learn "just enough" to get by, without ever forcing themselves to learn exactly how and why the language behaves the way it does. Furthermore, we eschew the common advice to *retreat* when the road gets rough.
+本書では、JS開発者たちの「必要な分だけ」学び、JSがどのように・なぜそう振る舞うのかを一切考えないという風潮に正面から立ち向かいます。本書では、難解なポイントに直面したときに*やめておこう*と一概にアドバイスすることをしません。
 
-I am not content, nor should you be, at stopping once something *just works*, and not really knowing *why*. I gently challenge you to journey down that bumpy "road less traveled" and embrace all that JavaScript is and can do. With that knowledge, no technique, no framework, no popular buzzword acronym of the week, will be beyond your understanding.
+私は、そして読者の皆さんもそうであるべきですが、*動けば良し*とする姿勢や、*なぜ*動くのかを本当は知らないという姿勢に満足しません。私は、読者の皆さんに徐々に「道なき道」を旅し、JavaScriptそのものやJavaScriptができることすべてを受け入れてほしいのです。そういった、テクニックでもフレームワークでも今週のバズ記事でもない「知識」は、読者のみなさんの理解を広げてくれることでしょう。
 
-These books each take on specific core parts of the language which are most commonly misunderstood or under-understood, and dive very deep and exhaustively into them. You should come away from reading with a firm confidence in your understanding, not just of the theoretical, but the practical "what you need to know" bits.
+本書は、JavaScriptの広く誤解されていたりそもそも理解されていなかったりする部分についてそれぞれ注目し、非常に深いところまで徹底的に理解していきます。読者のみなさんは、本書を読破するときにはJavaScriptへの理解に確固たる自信をもっていることでしょう。しかも本書では、単なる理論的な理解ではなく、実用的な「あなたが知るべきこと」を理解できるはずです。
 
-The JavaScript you know *right now* is probably *parts* handed down to you by others who've been burned by incomplete understanding. *That* JavaScript is but a shadow of the true language. You don't *really* know JavaScript, *yet*, but if you dig into this series, you *will*. Read on, my friends. JavaScript awaits you.
+読者のみなさんがJavaScriptについて*いま*知っていることはおそらくJavaScriptの*一部分*に過ぎず、他の誰かからの不完全な理解の付け焼き刃に過ぎません。*それ*もJavaScriptですが、本当のJavaScriptの影の部分でしかありません。あなたは*本当の意味での*JavaScriptを*まだ*知らないのです。しかし、本書を読み込めば、あなたは*いずれ*本当の意味でのJavaScriptを知ることができます。さあ読み始めましょう。JavaScriptがあなたを待っています。
 
-## Summary
+## まとめ
 
-JavaScript is awesome. It's easy to learn partially, and much harder to learn completely (or even *sufficiently*). When developers encounter confusion, they usually blame the language instead of their lack of understanding. These books aim to fix that, inspiring a strong appreciation for the language you can now, and *should*, deeply *know*.
+JavaScriptは最高です。JavaScriptを部分的に習得するのは簡単ですが、完全に習得するのは(あるいは、*十分に*習得するのでさえ)非常に大変です。開発者が理解に苦しむ点に出くわしたとき、彼らは自分の理解不足を棚に上げて言語を非難します。本書はその姿勢を見直してもらうことに焦点を当てています。あなたが今できる言語への感謝を促すとともに、あなたは言語について深く*知るべき*なのです。
 
-Note: Many of the examples in this book assume modern (and future-reaching) JavaScript engine environments, such as ES6. Some code may not work as described if run in older (pre-ES6) engines.
+補足: 本書における例の多くは、ES6のようなモダンな(かつ将来まで有効と思われる)JavaScriptエンジンを想定しています。本書に掲載されたコードを古い(ES6以前の)エンジンで動作させた場合、説明通りの動作にならない可能性があります。
