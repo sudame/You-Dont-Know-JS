@@ -1,20 +1,21 @@
 # You Don't Know JS: Up & Going
-# Foreword
 
-What was the last new thing you learned?
+# 本書に寄せて
 
-Perhaps it was a foreign language, like Italian or German. Or maybe it was a graphics editor, like Photoshop. Or a cooking technique or woodworking or an exercise routine. I want you to remember that feeling when you finally got it: the lightbulb moment. When things went from blurry to crystal clear, as you mastered the table saw or understood the difference between masculine and feminine nouns in French. How did it feel? Pretty amazing, right?
+あなたが最近習得したことはなんですか？
 
-Now I want you to travel back a little bit further in your memory to right before you learned your new skill. How did *that* feel? Probably slightly intimidating and maybe a little bit frustrating, right? At one point, we all did not know the things that we know now and that’s totally OK; we all start somewhere. Learning new material is an exciting adventure, especially if you are looking to learn the subject efficiently.
+それはイタリア語やドイツ語といった外国語かもしれません。あるいは、フォトショップのようなグラフィックエディタかもしれません。料理のテクニックだったり、木工だったり、ヨガだったりもするでしょう。習得した内容は何だって良いのですが、それを習得したときの、まるで電球が頭の上にパッと現れるようなあの感覚を大切にして欲しいと私は思っています。よく分からなかった物ごとがクリアになったとき、例えば丸ノコの使い方をマスターしたときやフランス語の男性名詞と女性名詞の区別が付くようになったとき、あなたはどう感じますか？とっても素晴らしい気分ですね。
 
-I teach a lot of beginner coding classes. The students who take my classes have often tried teaching themselves subjects like HTML or JavaScript by reading blog posts or copying and pasting code, but they haven’t been able to truly master the material that will allow them to code their desired outcome. And because they don’t truly grasp the ins and outs of certain coding topics, they can’t write powerful code or debug their own work, as they don’t really understand what is happening.
+さて、少し時間をさかのぼります。新しいスキルを習得する一歩手前の状態を想像してみてください。その時はどんな気分ですか？おそらく、少し怒れたり、いらだたしく思っているのではないでしょうか。その時点では、私たちは今では分かっているようなことを分かっていません。でもそれは問題ありません。誰もがどこかでスタートを切るのですから。新しい物ごとを習得するのは魅力的な冒険です。特に、効率的に学ぶことを求めている場合はなおさらでしょう。
 
-I always believe in teaching my classes the proper way, meaning I teach web standards, semantic markup, well-commented code, and other best practices. I cover the subject in a thorough manner to explain the hows and whys, without just tossing out code to copy and paste. When you strive to comprehend your code, you create better work and become better at what you do. The code isn’t just your *job* anymore, it’s your *craft*. This is why I love *Up & Going*. Kyle takes us on a deep dive through syntax and terminology to give a great introduction to JavaScript without cutting corners. This book doesn’t skim over the surface, but really allows us to genuinely understand the concepts we will be writing.
+私は、大勢の初心者をコーディング教室で教えてきました。私が教えた生徒たちの多くは、HTMLやJavaScriptをブログの記事や本、過去のコードから独学しようとしてきました。しかし、彼らは自分が望むようなコードを書けるほどにはHTMLやJavaScriptを習得することができませんでした。彼らはコーディングにおけるトピックの一部始終を把握できていないため、パワフルなコードやデバッグを書くことができず、実際に何が起こったのかを理解できないのです。
 
-Because it’s not enough to be able to duplicate jQuery snippets into your website, the same way it’s not enough to learn how to open, close, and save a document in Photoshop. Sure, once I learn a few basics about the program I could create and share a design I made. But without legitimately knowing the tools and what is behind them, how can I define a grid, or craft a legible type system, or optimize graphics for web use. The same goes for JavaScript. Without knowing how loops work, or how to define variables, or what scope is, we won’t be writing the best code we can. We don’t want to settle for anything less -- this is, after all, our craft.
+私は、自分の教室でいつも正しい方法で教えられていると信じています。私はwebの標準技術や効率的なマークアップ、適切にコメントされたコードなど、ベストな実践を教えています。私は、コードを提示してコピーアンドペーストさせるのではなく、どのように・なぜそういったコードを書くのかを徹底的に説明しています。コードを理解しようと努力することこそが、より良いコードを生み出し、成長に繋がるのです。コーディングは単なる*仕事(job)*ではなく、*技能(craft)*です。これが、私が*Up & Going*を大好きな理由です。KyleはJavaScriptを省略抜きで余すところ無く紹介するため、文法や専門用語の奥深くまで紹介してくれます。本書はJavaScriptの表面だけを学ぶなどということはしません。本書を読めば、自分が書くコードを真に理解することができるようになります。
 
-The more you are exposed to JavaScript, the clearer it becomes. Words like closures, objects, and methods might seem out of reach to you now, but this book will help those terms come into clarity. I want you to keep those two feelings of before and after you learn something in mind as you begin this book. It might seem daunting, but you’ve picked up this book because you are starting an awesome journey to hone your knowledge. *Up & Going* is the start of our path to understanding programming. Enjoy the lightbulb moments!
+Photoshopでドキュメントの開き方、閉じ方、保存の仕方を学ぶだけでは不十分なのと同様、jQueryの定型文をwebサイトに貼り付けるようになるだけでは不十分です。もちろん、Photoshopのほんの少し基礎的な部分を習得すれば、オリジナルのデザインを作ってシェアすることはできます。しかし、体系的にPhotoshopを知り、その背景に何があるのかを知らなければ、グリッドを定義したり、読みやすく文章をデザインしたり、web用に画像を最適化したりすることはできません。同じことはJavaScriptにも言えます。ループがどのように動作するのか、どのように変数を定義するのか、スコープとは何かを知らなければ、最適なコードを生み出すことはできないでしょう。私たちは少しも手を抜きたくはありません。結局のところ、それこそが私たちの技能なのです。
 
-Jenn Lukas<br>
+JavaScriptを使えば使うほど、JavaScriptのことを明確に理解できるようになります。クロージャ、オブジェクト、メソッドといった単語は、今ではさっぱり理解できないと思いますが、本書はそんな単語を明快に理解する手助けになるはずです。私は、読者のみなさんが本書を読みはじめるに当たって、何か物ごとを習得する前と後の、二種類の気持ちを大切にして欲しいと思っています。本書にひるんでしまうかもしれませんが、読者のみなさんは自分自身の知識を磨く素晴らしい旅のために本書を手にしたはずです。*Up & Going*はプログラミングの理解の最初の一歩です。電球がパッとひらめく、あの瞬間を楽しみましょう！
+
+ジェン ルーカス(Jenn Lukas)<br>
 [jennlukas.com](http://jennlukas.com/), [@jennlukas](https://twitter.com/jennlukas)<br>
-Front-end consultant
+フロントエンドコンサルタント
