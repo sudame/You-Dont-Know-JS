@@ -13,78 +13,80 @@
 
 既にJavaScriptに慣れているなら、チャプター3から読み始めてください。チャプター3では、*YDKJS*を通して何を学べるのかを簡単に説明しています。知りたい内容が見つかったら、今すぐ読み始めましょう！
 
-## Code
+## コード
 
-Let's start from the beginning.
+さっそく取り掛かりましょう。
 
-A program, often referred to as *source code* or just *code*, is a set of special instructions to tell the computer what tasks to perform. Usually code is saved in a text file, although with JavaScript you can also type code directly into a developer console in a browser, which we'll cover shortly.
+プログラムは、コンピュータに何をさせるのかを示した命令の集まりです。プログラムは *ソースコード* や単純に *コード* とも呼ばれます。コードは普通、テキストファイルに保存します。ただし、この後すぐ説明しますが、JavaScriptはブラウザの開発者ツールを使って直接コードを書くこともできます。
 
-The rules for valid format and combinations of instructions is called a *computer language*, sometimes referred to as its *syntax*, much the same as English tells you how to spell words and how to create valid sentences using words and punctuation.
+プログラムの正しい書き方や命令の組み合わせ方の「ルール」のことを *プログラミング言語* 、あるいは *構文* と呼びます。これは、English(英語)という言語が、どのように単語をつづり、どのように意味のある文を作り、どのように句読点を打つかという「ルール」であることと全く同じです。
 
-### Statements
+### 文(Statements)
 
-In a computer language, a group of words, numbers, and operators that performs a specific task is a *statement*. In JavaScript, a statement might look as follows:
-
-```js
-a = b * 2;
-```
-
-The characters `a` and `b` are called *variables* (see "Variables"), which are like simple boxes you can store any of your stuff in. In programs, variables hold values (like the number `42`) to be used by the program. Think of them as symbolic placeholders for the values themselves.
-
-By contrast, the `2` is just a value itself, called a *literal value*, because it stands alone without being stored in a variable.
-
-The `=` and `*` characters are *operators* (see "Operators") -- they perform actions with the values and variables such as assignment and mathematic multiplication.
-
-Most statements in JavaScript conclude with a semicolon (`;`) at the end.
-
-The statement `a = b * 2;` tells the computer, roughly, to get the current value stored in the variable `b`, multiply that value by `2`, then store the result back into another variable we call `a`.
-
-Programs are just collections of many such statements, which together describe all the steps that it takes to perform your program's purpose.
-
-### Expressions
-
-Statements are made up of one or more *expressions*. An expression is any reference to a variable or value, or a set of variable(s) and value(s) combined with operators.
-
-For example:
+プログラミング言語では、1つのタスクを行う単語や数字や演算子の集まりのことを *式(ステートメント)* と呼びます。JavaScriptでは、式は次のように書きます。
 
 ```js
 a = b * 2;
 ```
 
-This statement has four expressions in it:
+`a` や `b` という文字は *変数* と呼ばれます(詳しくは「変数」の項を参照)。変数は、何でも入れられるシンプルな箱のようなものです。プログラムでは、変数はプログラム中で使われる値(例えば数字の `42` )を保持するために使います。変数は値に対するプレースホルダーと考えても構いません。
 
-* `2` is a *literal value expression*
-* `b` is a *variable expression*, which means to retrieve its current value
-* `b * 2` is an *arithmetic expression*, which means to do the multiplication
-* `a = b * 2` is an *assignment expression*, which means to assign the result of the `b * 2` expression to the variable `a` (more on assignments later)
+対象的に、`2` は変数に格納されておらず独立しているため、単なる値だと考えることができます。単なる値は *リテラル* と呼ばれます。
 
-A general expression that stands alone is also called an *expression statement*, such as the following:
+(訳注: 原文では *リテラル* は *literal value* と書かれており、*リテラル値* が直訳ですが、日本人プログラマは単に *リテラル* と呼ぶことが多いため、 *リテラル* を採用しました。)
+
+`=` や `*` といった文字は *演算子* です(詳しくは「演算子」の項を参照)。演算子は代入や乗算といった値や変数に対する操作を行うときに用います。
+
+JavaScriptのほとんどの文は、最後にセミコロン(`;`)を付けて終了します。
+
+おおまかに言えば、`a = b * 2;` という式はコンピュータに対して「現在変数 `b` に格納されている値に `2` を掛け、乗算の結果を( `b` とは別の)変数 `a` に保存しろ」といった命令を出しています。
+
+プログラムはたくさんの文を集めたもので、プログラムの目的をこなすために必要な全てのステップをまとめたものと言えます。
+
+### 式(Expressions)
+
+文(ステートメント)は1つ以上の *式(expressions)* で構成されます。式は、変数や値の参照であったり、変数や値と演算子を組み合わせたものであったりします。
+
+具体的に見てみましょう。
+
+```js
+a = b * 2;
+```
+
+この文には4つの式が含まれています。
+
+* `2` は *リテラル式* です。
+* `b` は *変数式* です。変数に格納されている値を取り出します。
+* `b * 2` は *算術式* です。ここでは、乗算を行っています。
+* `a = b * 2` は *代入式* です。ここでは、`b * 2` という式の計算結果を変数 `a` に代入(代入については後ほど触れます)しています。
+
+独立している式は *式文(expression statement)* と呼ばれます。
 
 ```js
 b * 2;
 ```
 
-This flavor of expression statement is not very common or useful, as generally it wouldn't have any effect on the running of the program -- it would retrieve the value of `b` and multiply it by `2`, but then wouldn't do anything with that result.
+この式文はプログラムの実行結果に何の影響も及ぼさないため、あまり一般的ではありませんし、有用でもありません。この式文では、変数 `b` から値を取り出してそれに `2` を掛けますが、乗算の結果は全く使われません。
 
-A more common expression statement is a *call expression* statement (see "Functions"), as the entire statement is the function call expression itself:
+より一般的で有用な式文としては *呼び出し式* の文(詳しくは「関数」の項を参照)が挙げられます。呼び出し式は文そのものが関数を呼び出します。
 
 ```js
 alert( a );
 ```
 
-### Executing a Program
+### プログラムの実行
 
-How do those collections of programming statements tell the computer what to do? The program needs to be *executed*, also referred to as *running the program*.
+プログラム言語を使ってコードを書くことはできましたが、それをどのようにコンピュータに理解させるのでしょう？プログラムは *実行* される必要があります。プログラムを実行することは *プログラムを走らせる* と表現されることもあります。
 
-Statements like `a = b * 2` are helpful for developers when reading and writing, but are not actually in a form the computer can directly understand. So a special utility on the computer (either an *interpreter* or a *compiler*) is used to translate the code you write into commands a computer can understand.
+`a = b * 2` といった式は開発者が読み書きするのには便利ですが、実際にはコンピュータは直接この書き方を理解することができません。このため、コンピュータが理解できる命令に変換するためのツール(*インタープリタ* とか *コンパイラ* と呼ばれます)が用いられます。
 
-For some computer languages, this translation of commands is typically done from top to bottom, line by line, every time the program is run, which is usually called *interpreting* the code.
+いくつかのプログラミング言語では、この変換作業が文字通り上から下に、1行ずつ、プログラムを走らせるたびに行われます。この方式の変換作業のことを *インタープリティング* と呼び、この方式を採用した言語のことを「インタープリタ型言語」と呼びます。
 
-For other languages, the translation is done ahead of time, called *compiling* the code, so when the program *runs* later, what's running is actually the already compiled computer instructions ready to go.
+インタープリタ型言語以外のプログラミング言語では、変換作業を事前に行っておきます。プログラムが *走る* 際に実際に実行されるのは、事前に変換作業を行ったコードです。この方式の変換作業のことを *コンパイル* と呼び、この方式を採用した言語のことを「コンパイラ型言語」と呼びます。
 
-It's typically asserted that JavaScript is *interpreted*, because your JavaScript source code is processed each time it's run. But that's not entirely accurate. The JavaScript engine actually *compiles* the program on the fly and then immediately runs the compiled code.
+通常、JavaScriptは実行時にソースコードを変換するため *インタープリタ型言語* であると言われています。しかしそれは完全に正確ではありません。正確に言えば、JavaScriptエンジンは実行時にプログラムを *コンパイル* し、それを即座に実行しているからです。
 
-**Note:** For more information on JavaScript compiling, see the first two chapters of the *Scope & Closures* title of this series.
+**注釈:** JavaScriptのコンパイルについてより詳しく知りたい場合は、本シリーズの *Scope & Closures* の最初の2チャプターを読んでみてください。
 
 ## Try It Yourself
 
