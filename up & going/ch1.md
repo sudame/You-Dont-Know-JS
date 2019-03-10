@@ -88,17 +88,17 @@ alert( a );
 
 **注釈:** JavaScriptのコンパイルについてより詳しく知りたい場合は、本シリーズの *Scope & Closures* の最初の2チャプターを読んでみてください。
 
-## Try It Yourself
+## 実践してみよう
 
-This chapter is going to introduce each programming concept with simple snippets of code, all written in JavaScript (obviously!).
+この章では、それぞれのプログラミングの概念について簡単なコードを交えつつ紹介していきます。コードは全てJavaScriptで書かれています(もちろん！)。
 
-It cannot be emphasized enough: while you go through this chapter -- and you may need to spend the time to go over it several times -- you should practice each of these concepts by typing the code yourself. The easiest way to do that is to open up the developer tools console in your nearest browser (Firefox, Chrome, IE, etc.).
+ここで、とても重要なことをアドバイスしておきます。この章を学習している間(全てを理解するには数回読み直す必要があるかもしれません)は、それぞれの概念について、実際に自分でコードを手書きして実践するようにしてください。最も簡単な方法は、普段使っているブラウザ(Firefox, Chrome, IEなど)の開発者ツールのコンソールを使うことです。
 
-**Tip:** Typically, you can launch the developer console with a keyboard shortcut or from a menu item. For more detailed information about launching and using the console in your favorite browser, see "Mastering The Developer Tools Console" (http://blog.teamtreehouse.com/mastering-developer-tools-console). To type multiple lines into the console at once, use `<shift> + <enter>` to move to the next new line. Once you hit `<enter>` by itself, the console will run everything you've just typed.
+**Tip:** 通常、開発者ツールはキーボードショートカットかメニューから開くことができます。より詳細な開き方やお気に入りのブラウザでのコンソールの使い方については、"Mastering The Developer Tools Console" (http://blog.teamtreehouse.com/mastering-developer-tools-console)をご覧ください。コンソールで一度に複数行を入力するときは、`<shift> + <enter>` で改行してください。単純に `<enter>` と打って改行しようとすると、コンソールは今までに書き込んだコードを全て実行してしまいます。
 
-Let's get familiar with the process of running code in the console. First, I suggest opening up an empty tab in your browser. I prefer to do this by typing `about:blank` into the address bar. Then, make sure your developer console is open, as we just mentioned.
+さて、コンソールでの実行に少しずつ慣れていきましょう。はじめに、ブラウザで新規タブを開いてください。アドレスバーに `about:blank` と入力するのがオススメの方法です。新規タブが開いたら、先ほど紹介した方法でコンソールを開いてください。
 
-Now, type this code and see how it runs:
+それでは、このコードを打ち込んで何が起こるのか見てみましょう
 
 ```js
 a = 21;
@@ -108,39 +108,39 @@ b = a * 2;
 console.log( b );
 ```
 
-Typing the preceding code into the console in Chrome should produce something like the following:
+上記のコードをChromeのコンソールに入力すると、このような結果が出るはずです。
 
 <img src="fig1.png" width="500">
 
-Go on, try it. The best way to learn programming is to start coding!
+では、読者の皆さんも試してみてください。プログラミングを習得する第一歩は、とにかくコーディングを始めてしまうことです！
 
-### Output
+### 出力
 
-In the previous code snippet, we used `console.log(..)`. Briefly, let's look at what that line of code is all about.
+先ほど示したコード例では、`console.log(..)` を使いました。この文が何を意味しているのかを見ていきましょう。
 
-You may have guessed, but that's exactly how we print text (aka *output* to the user) in the developer console. There are two characteristics of that statement that we should explain.
+おそらくあなたの想像通り、このコードはコンソールに文字列をプリントする(あるいは *出力* する)ことを意味します。さて、文中には2つ、説明しなければならない部分があります。
 
-First, the `log( b )` part is referred to as a function call (see "Functions"). What's happening is we're handing the `b` variable to that function, which asks it to take the value of `b` and print it to the console.
+まず一つ目は `log( b )` の部分です。この部分は関数呼び出し(詳しくは「関数」の項を参照)を行っています。変数 `b` を関数に渡し、その関数が変数 `b` の値を読み取ってコンソールに出力しています。
 
-Second, the `console.` part is an object reference where the `log(..)` function is located. We cover objects and their properties in more detail in Chapter 2.
+二つ目は `console.` の部分です。この部分は、関数 `log(..)` を持っているオブジェクトへの参照です。オブジェクトやそのプロパティについては、チャプター2でより詳細に解説します。
 
-Another way of creating output that you can see is to run an `alert(..)` statement. For example:
+他の出力方法として、`alert(..)` 文を実行する方法があります。例えば、次のように書きます。
 
 ```js
 alert( b );
 ```
 
-If you run that, you'll notice that instead of printing the output to the console, it shows a popup "OK" box with the contents of the `b` variable. However, using `console.log(..)` is generally going to make learning about coding and running your programs in the console easier than using `alert(..)`, because you can output many values at once without interrupting the browser interface.
+この文を実行すると、コンソールに文字が出力される代わりに、「OK」というボタンに併せて変数 `b` の内容が表示されるポップアップが現れるはずです。ただ、コーディングを習得したりプログラムをコンソール上で実行したりする上では、`alert(..)` を使うより `console.log(..)` を使うほうがより便利です。`console.log(..)` を使えば、ブラウザをいちいち操作することなく複数の値を出力することができるからです。
 
-For this book, we'll use `console.log(..)` for output.
+本書では、出力の方法として `console.log(..)` を使うことにします。
 
-### Input
+### 入力
 
-While we're discussing output, you may also wonder about *input* (i.e., receiving information from the user).
+ここまでは出力について扱ってきましたが、読者の皆さんは *入力* (例えば、ユーザから情報を受け取ること)も気になっているかもしれません。
 
-The most common way that happens is for the HTML page to show form elements (like text boxes) to a user that they can type into, and then using JS to read those values into your program's variables.
+最も一般的な場面としては、HTMLページに(テキストボックスのような)フォームを設置し、ユーザに入力してもらって、JSでユーザからの入力を受け取って変数に保存するというような場面が考えられます。
 
-But there's an easier way to get input for simple learning and demonstration purposes such as what you'll be doing throughout this book. Use the `prompt(..)` function:
+しかし、デモンストレーションや単純な学習目的としては、より簡単な方法があり、本書ではこの方法を採用します。`prompt(..)` 関数を使います。
 
 ```js
 age = prompt( "Please tell me your age:" );
@@ -148,17 +148,17 @@ age = prompt( "Please tell me your age:" );
 console.log( age );
 ```
 
-As you may have guessed, the message you pass to `prompt(..)` -- in this case, `"Please tell me your age:"` -- is printed into the popup.
+皆さんのご想像通り、`prompt(..)` に渡したメッセージ(この場合は `"Please tell me your age:"`)がポップアップの中に表示されます。
 
-This should look similar to the following:
+実行結果は次のようになるはずです。
 
 <img src="fig2.png" width="500">
 
-Once you submit the input text by clicking "OK," you'll observe that the value you typed is stored in the `age` variable, which we then *output* with `console.log(..)`:
+テキストを入力して「OK」をクリックすれば、入力した値が変数 `age` に保存され、`console.log(..)` 関数によってコンソールに *出力* されることを確認できるはずです。
 
 <img src="fig3.png" width="500">
 
-To keep things simple while we're learning basic programming concepts, the examples in this book will not require input. But now that you've seen how to use `prompt(..)`, if you want to challenge yourself you can try to use input in your explorations of the examples.
+プログラミングの基礎的な概念を学んでいく中で見通しを良くするため、本書のコード例ではユーザからの入力を扱いませんが、読者の皆さんは既に `prompt(..)` の使い方を習得していますから、もし余力があれば、ユーザの入力を受け付けるようコード例を改造してみるのも良いでしょう。
 
 ## Operators
 
