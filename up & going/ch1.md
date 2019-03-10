@@ -1,17 +1,17 @@
 # You Don't Know JS: Up & Going
-# Chapter 1: Into Programming
+# チャプター 1: プログラミング入門
 
-Welcome to the *You Don't Know JS* (*YDKJS*) series.
+*You Don't Know JS* (*YDKJS*)シリーズへようこそ。
 
-*Up & Going* is an introduction to several basic concepts of programming -- of course we lean toward JavaScript (often abbreviated JS) specifically -- and how to approach and understand the rest of the titles in this series. Especially if you're just getting into programming and/or JavaScript, this book will briefly explore what you need to get *up and going*.
+*Up & Going* では、JavaScriptを中心としてプログラミングの基本的なコンセプトについて紹介します。JavaScriptはJSと略されることもあるので注意してください。本シリーズの残りのテーマについて、どのようにアプローチし理解していくかも本書で紹介します。特に、プログラミングやJavaScriptを始めたばかりの読者向けに、*up and going*するために何をすれば良いのかを簡潔に説明します。
 
-This book starts off explaining the basic principles of programming at a very high level. It's mostly intended if you are starting *YDKJS* with little to no prior programming experience, and are looking to these books to help get you started along a path to understanding programming through the lens of JavaScript.
+本書ではまず、プログラミングの基本的な原則を非常に高いレベルで紹介します。これは、プログラミング経験が無かったり、本シリーズをJavaScriptを通したプログラミングの入門書として手に取ったりした方向けの内容です。
 
-Chapter 1 should be approached as a quick overview of the things you'll want to learn more about and practice to get *into programming*. There are also many other fantastic programming introduction resources that can help you dig into these topics further, and I encourage you to learn from them in addition to this chapter.
+チャプター1では、	プログラミングに入門するために読者の皆さんが学ばなければいけないことを簡単に示します。各トピックについて深く知りたい場合は、他にも素晴らしい教材がたくさんあります。しかし、チャプター1を読んでから取り掛かることを強くオススメします。
 
-Once you feel comfortable with general programming basics, Chapter 2 will help guide you to a familiarity with JavaScript's flavor of programming. Chapter 2 introduces what JavaScript is about, but again, it's not a comprehensive guide -- that's what the rest of the *YDKJS* books are for!
+プログラミングの一般的な部分に納得できたら、チャプター2に進みましょう。チャプター2の目標はJavaScript特有のプログラミングに馴染むことです。チャプター2では、JavaScriptとは一体何なのかを説明します。繰り返しになりますが、チャプター2で触れる内容はJavaScriptの全てではありません。JavaScriptの全ては、残りの*YDJKS*シリーズでじっくりお教えします！
 
-If you're already fairly comfortable with JavaScript, first check out Chapter 3 as a brief glimpse of what to expect from *YDKJS*, then jump right in!
+既にJavaScriptに慣れているなら、チャプター3から読み始めてください。チャプター3では、*YDKJS*を通して何を学べるのかを簡単に説明しています。知りたい内容が見つかったら、今すぐ読み始めましょう！
 
 ## Code
 
