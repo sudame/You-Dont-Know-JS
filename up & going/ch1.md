@@ -160,28 +160,28 @@ console.log( age );
 
 プログラミングの基礎的な概念を学んでいく中で見通しを良くするため、本書のコード例ではユーザからの入力を扱いませんが、読者の皆さんは既に `prompt(..)` の使い方を習得していますから、もし余力があれば、ユーザの入力を受け付けるようコード例を改造してみるのも良いでしょう。
 
-## Operators
+## 演算子
 
-Operators are how we perform actions on variables and values. We've already seen two JavaScript operators, the `=` and the `*`.
+演算子は、変数や値に対するアクションを指定するものです。これまでに本書では `=` と `*` という2つのJavaScript演算子を紹介しました。
 
-The `*` operator performs mathematic multiplication. Simple enough, right?
+`*` 演算子は算術乗算を行います。とても直感的ですね。
 
-The `=` equals operator is used for *assignment* -- we first calculate the value on the *right-hand side* (source value) of the `=` and then put it into the variable that we specify on the *left-hand side* (target variable).
+`=` イコール演算子は代入のために用いられます。JavaScriptはまず *右辺* (元の値)の式を計算し、それを *左辺* (ターゲット変数)に指定した変数に保存するという動作をします。
 
-**Warning:** This may seem like a strange reverse order to specify assignment. Instead of `a = 42`, some might prefer to flip the order so the source value is on the left and the target variable is on the right, like `42 -> a` (this is not valid JavaScript!). Unfortunately, the `a = 42` ordered form, and similar variations, is quite prevalent in modern programming languages. If it feels unnatural, just spend some time rehearsing that ordering in your mind to get accustomed to it.
+**注意:** プログラミングの代入の書き方は、想像と逆の順序で書いているようで奇妙に見えるかもしれません。読者の皆さんのうち何人かは、`a = 42` と書くのではなく、元の値を左に、ターゲット変数を右に書いて `42 -> a` というように(これは正しいJavaScriptの書き方ではありません！)書きたいと思っていることでしょう。 ただ残念ながら、`a = 42` やそれに類する書き方は、最近のプログラミング言語では共通の書き方です。不自然な書き方だと感じても、時間をかけて慣れていくしかありません。
 
-Consider:
+次のコード例を考えてみましょう。
 
 ```js
 a = 2;
 b = a + 1;
 ```
 
-Here, we assign the `2` value to the `a` variable. Then, we get the value of the `a` variable (still `2`), add `1` to it resulting in the value `3`, then store that value in the `b` variable.
+コード例ではまず、値 `2` を変数 `a` に代入しています。次に、`a` の値を読み取って(先ほど指定した `2` が読まれます)それに `1` を足します。最後に、計算結果である `3` を変数 `b` に保存しています。
 
-While not technically an operator, you'll need the keyword `var` in every program, as it's the primary way you *declare* (aka *create*) *var*iables (see "Variables").
+これは演算子の話ではありませんが、`var` というキーワードをプログラムの随所に使っています。`var` は *var*iable(変数)を *定義* (あるいは *生成*)する基本的なキーワードです。
 
-You should always declare the variable by name before you use it. But you only need to declare a variable once for each *scope* (see "Scope"); it can be used as many times after that as needed. For example:
+私たちは、変数を使う前にその変数を変数名とともに定義する必要があります。1つの *スコープ* (詳しくは「スコープ」の項を参照)に対して、同じ名前の変数は一度だけ定義できます。定義してしまえば、その後は必要に応じて何度でも変数を使うことができます。コード例を見てみましょう。
 
 ```js
 var a = 20;
@@ -192,26 +192,26 @@ a = a * 2;
 console.log( a );	// 42
 ```
 
-Here are some of the most common operators in JavaScript:
+次に示すのは、JavaScriptでも最も一般的な演算子です。
 
-* Assignment: `=` as in `a = 2`.
-* Math: `+` (addition), `-` (subtraction), `*` (multiplication), and `/` (division), as in `a * 3`.
-* Compound Assignment: `+=`, `-=`, `*=`, and `/=` are compound operators that combine a math operation with assignment, as in `a += 2` (same as `a = a + 2`).
-* Increment/Decrement: `++` (increment), `--` (decrement), as in `a++` (similar to `a = a + 1`).
-* Object Property Access: `.` as in `console.log()`.
+* 代入演算子: `=` | `a = 2` のように使います。
+* 算術演算子: `+` (加算), `-` (減算), `*` (乗算), and `/` (除算) | `a * 3` のように使います。
+* 複合演算子: `+=`, `-=`, `*=`, `/=` は複合演算子で、算術演算子と代入演算子を組み合わせたものです。| `a += 2` (`a = a + 2` と同じ意味)のように使います。
+* インクリメント/デクリメント: `++` (インクリメント), `--` (デクリメント) | `a++` のように使います。(`a = a + 1` と同じ意味です)。
+* プロパティアクセス演算子: `.` | `console.log()` のように使います。
 
-   Objects are values that hold other values at specific named locations called properties. `obj.a` means an object value called `obj` with a property of the name `a`. Properties can alternatively be accessed as `obj["a"]`. See Chapter 2.
-* Equality: `==` (loose-equals), `===` (strict-equals), `!=` (loose not-equals), `!==` (strict not-equals), as in `a == b`.
+	オブジェクトは他の値をプロパティーと呼ばれる場所に名前を付けて保存できるような値です。`obj.a` は `obj` という名前のオブジェクトの、 `a` という名前のプロパティを指します。プロパティには `obj["a"]` という書き方でもアクセスできます。チャプター2をご覧ください。
+* 等値演算子: `==` (弱等値), `===` (強等値), `!=` (弱不等値), `!==` (強不等値) | `a == b` のように使います。
 
-   See "Values & Types" and Chapter 2.
-* Comparison: `<` (less than), `>` (greater than), `<=` (less than or loose-equals), `>=` (greater than or loose-equals), as in `a <= b`.
+	"Values & Types" やチャプター2をご覧ください。
+* 比較演算子: `<` (小なり), `>` (大なり), `<=` (以下), `>=` (以上) |  `a <= b` のように使います。
 
-   See "Values & Types" and Chapter 2.
-* Logical: `&&` (and), `||` (or), as in `a || b` that selects either `a` *or* `b`.
+	"Values & Types" やチャプター2をご覧ください。
+* 論理演算子: `&&` (かつ), `||` (または) | `a || b` のように使います。これは `a` *または* `b` を表します。
 
-   These operators are used to express compound conditionals (see "Conditionals"), like if either `a` *or* `b` is true.
+	これらの演算子は、「`a` または `b` が true」といったように、複数の条件(詳しくは「条件」を参照)を表現するときに用います。
 
-**Note:** For much more detail, and coverage of operators not mentioned here, see the Mozilla Developer Network (MDN)'s "Expressions and Operators" (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators).
+**注意:** より詳しく知りたい場合やここで紹介していない演算子について知りたい場合はMozila Developer Network (MDN)の「式と演算子」(https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Expressions_and_Operators)をご覧ください。
 
 ## Values & Types
 
