@@ -213,29 +213,29 @@ console.log( a );	// 42
 
 **注意:** より詳しく知りたい場合やここで紹介していない演算子について知りたい場合はMozila Developer Network (MDN)の「式と演算子」(https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Expressions_and_Operators)をご覧ください。
 
-## Values & Types
+## 値と型
 
-If you ask an employee at a phone store how much a certain phone costs, and they say "ninety-nine, ninety-nine" (i.e., $99.99), they're giving you an actual numeric dollar figure that represents what you'll need to pay (plus taxes) to buy it. If you want to buy two of those phones, you can easily do the mental math to double that value to get $199.98 for your base cost.
+携帯電話ショップで、ある携帯電話の価格を店員に聞いたとしましょう。店員は「98,000」(¥98,000)と答えました。ここでは、店員はあなたが携帯電話を買うために必要な金額を数値で答えました。もしあなたが2つ携帯電話を必要であれば、暗算で金額を2倍するでしょう。¥196,000が支払うべき金額です。
 
-If that same employee picks up another similar phone but says it's "free" (perhaps with air quotes), they're not giving you a number, but instead another kind of representation of your expected cost ($0.00) -- the word "free."
+同じ店員が似たような携帯電話を持ってきて、「無料」と言ったとしましょう。今回は店員は数値で金額を教えるのではなく、「無料」という文字列で金額(¥0)を伝えてくれました。
 
-When you later ask if the phone includes a charger, that answer could only have been either "yes" or "no."
+次に、携帯電話に充電器が付いてくるのか聞いてみましょう。店員の回答は「はい」か「いいえ」であるはずです。
 
-In very similar ways, when you express values in a program, you choose different representations for those values based on what you plan to do with them.
+プログラムの中で値を扱う場合も携帯ショップでのやりとりと同じように、どんな値を扱うのかに応じて値の表し方を選ぶ必要があります。
 
-These different representations for values are called *types* in programming terminology. JavaScript has built-in types for each of these so called *primitive* values:
+この値の異なる表し方のことを、プログラミングでは *型* と言います。JavaScriptは *プリミティブ型* と呼ばれる、次のようなビルトインの型を持っています。
 
-* When you need to do math, you want a `number`.
-* When you need to print a value on the screen, you need a `string` (one or more characters, words, sentences).
-* When you need to make a decision in your program, you need a `boolean` (`true` or `false`).
+* 数値計算をするならば、`number` 型を使います。
+* 画面上に値を出力するのであれば、`string` 型を使います。これは1つ以上の文字や単語や文を表します。
+* プログラム中で判断をするのであれば `boolean` 型 (`true` または `false`)を使います。
 
-Values that are included directly in the source code are called *literals*. `string` literals are surrounded by double quotes `"..."` or single quotes (`'...'`) -- the only difference is stylistic preference. `number` and `boolean` literals are just presented as is (i.e., `42`, `true`, etc.).
+ソースコード中に直接記してある値のことを *リテラル* と言います。`string` 型のリテラルはダブルクオーテーション( `"..."` )かシングルクオーテーション('...')で囲みます。ダブルクオーテーションとシングルクオーテーションの違いは見た目の違いのみです。`number` 型や `boolean` 型のリテラルはそのまま書けば良いです(例えば、`42` や `true` など)。
 
-Consider:
+次のコード例を見てみましょう。
 
 ```js
-"I am a string";
-'I am also a string';
+"これはstring型です";
+'これもまたstring型です';
 
 42;
 
@@ -243,13 +243,13 @@ true;
 false;
 ```
 
-Beyond `string`/`number`/`boolean` value types, it's common for programming languages to provide *arrays*, *objects*, *functions*, and more. We'll cover much more about values and types throughout this chapter and the next.
+`string`/`number`/`boolean` という型に加えて、プログラミング言語では *配列*, *オブジェクト*, *関数* などという機能が提供されるのが一般的です。このチャプターと次のチャプターで、値と型についてはさらに詳しく説明します。
 
-### Converting Between Types
+### 型の変換
 
-If you have a `number` but need to print it on the screen, you need to convert the value to a `string`, and in JavaScript this conversion is called "coercion." Similarly, if someone enters a series of numeric characters into a form on an ecommerce page, that's a `string`, but if you need to then use that value to do math operations, you need to *coerce* it to a `number`.
+`number` 型の変数があり、それを画面上に出力したい場合、`string` 型に変換する必要があります。JavaScriptでは、この変換のことを「型強制(coercing)」と言います。同じように、ネットショッピングのwebページのフォームから数字が入力された場合、数字は `string` 型として取得されますが、数値計算をしたい場合は `number` 型として扱うよう *強制* する必要があります。
 
-JavaScript provides several different facilities for forcibly coercing between *types*. For example:
+JavaScriptは *型* 強制を行うためにいくつかの方法を提供しています。その内の一つの方法は次のようなものです。
 
 ```js
 var a = "42";
@@ -259,21 +259,21 @@ console.log( a );	// "42"
 console.log( b );	// 42
 ```
 
-Using `Number(..)` (a built-in function) as shown is an *explicit* coercion from any other type to the `number` type. That should be pretty straightforward.
+`Number(..)` (ビルトイン関数)を用いることで、他のどのような型も *明示的に* `number` 型へと強制できます。非常に分かりやすいですね。
 
-But a controversial topic is what happens when you try to compare two values that are not already of the same type, which would require *implicit* coercion.
+しかし、同じ型ではない2つの値を比較しようとするときは、論争を生むようなことが起こります。*暗黙的な* 型強制が行われるのです。
 
-When comparing the string `"99.99"` to the number `99.99`, most people would agree they are equivalent. But they're not exactly the same, are they? It's the same value in two different representations, two different *types*. You could say they're "loosely equal," couldn't you?
+文字列型の `"99.99"` と数値型の `99.99` を比較するとき、ほとんどの人はこれらは等しいと考えるでしょう。しかし、これらの値は厳密には等しくありませんね。これらは異なる種類の同じ値ですが、*型* が異なります。これは「弱い等値」であると言えると思いませんか？
 
-To help you out in these common situations, JavaScript will sometimes kick in and *implicitly* coerce values to the matching types.
+このような良くあるシチュエーションに対処するため、JavaScriptは *暗黙的に* 型強制を行い、マッチする型ととして値を格納する機能を持っています。
 
-So if you use the `==` loose equals operator to make the comparison `"99.99" == 99.99`, JavaScript will convert the left-hand side `"99.99"` to its `number` equivalent `99.99`. The comparison then becomes `99.99 == 99.99`, which is of course `true`.
+`==` 弱等値演算子を用いて `"99.99" == 99.99` という比較演算を行うと、JavaScriptは左辺の `"99.99"` を同じ値の `number` 型である `99.99` へと変換します。これにより、比較演算は `99.99 == 99.99` となり、結果はもちろん `true` となります。
 
-While designed to help you, implicit coercion can create confusion if you haven't taken the time to learn the rules that govern its behavior. Most JS developers never have, so the common feeling is that implicit coercion is confusing and harms programs with unexpected bugs, and should thus be avoided. It's even sometimes called a flaw in the design of the language.
+暗黙的な型強制は開発を簡単にするために設計されたものですが、開発者が挙動のルールを十分に習得していない場合、かえって混乱を巻き起こすことになります。ほとんどのJS開発者は暗黙的な型強制について学ぶための時間を十分確保できていないため、暗黙的な型強制は予期せぬバグを引き起こす可能性があり避けるべきだと思われています。暗黙的な型強制はJavaScriptの設計上の弱点だとさえも言われる始末です。
 
-However, implicit coercion is a mechanism that *can be learned*, and moreover *should be learned* by anyone wishing to take JavaScript programming seriously. Not only is it not confusing once you learn the rules, it can actually make your programs better! The effort is well worth it.
+しかし、暗黙的な型強制は *習得可能な* メカニズムであり、JavaScriptできちんとプログラミングをしたい人は *習得すべき* ものです。一度ルールを習得してしまえば、暗黙的な型強制で混乱しないようになるだけでなく、プログラムをより良いものにすることさえできます。暗黙的な型強制は習得するに値するものです。
 
-**Note:** For more information on coercion, see Chapter 2 of this title and Chapter 4 of the *Types & Grammar* title of this series.
+**注意:** 型強制についてより詳しく知りたい場合は、チャプター2か、*Types & Grammar* のチャプター4をご覧ください。
 
 ## Code Comments
 
