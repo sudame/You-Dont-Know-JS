@@ -275,67 +275,70 @@ console.log( b );	// 42
 
 **注意:** 型強制についてより詳しく知りたい場合は、チャプター2か、*Types & Grammar* のチャプター4をご覧ください。
 
-## Code Comments
+## コードコメント
 
-The phone store employee might jot down some notes on the features of a newly released phone or on the new plans her company offers. These notes are only for the employee -- they're not for customers to read. Nevertheless, these notes help the employee do her job better by documenting the hows and whys of what she should tell customers.
+携帯電話ショップの店員は、新製品の特徴や本社の方針をメモに書いておくかもしれません。このメモは店員向けのものであり、来店客にが読むものではありません。にも関わらず、メモは店員が来店客に何をどのように伝えれば良いのかが書かれていますから、仕事をより良いものにしてくれます。
 
-One of the most important lessons you can learn about writing code is that it's not just for the computer. Code is every bit as much, if not more, for the developer as it is for the compiler.
+コードを書く中で最も重要なことの一つは、コードはコンピュータが読むだけのものではないということです。コードはコンパイラが解読するためにあるのと同様、開発者自身が解読するものでもあります。
 
-Your computer only cares about machine code, a series of binary 0s and 1s, that comes from *compilation*. There's a nearly infinite number of programs you could write that yield the same series of 0s and 1s. The choices you make about how to write your program matter -- not only to you, but to your other team members and even to your future self.
+コンピュータは *コンパイル* によって生成される0と1が連なる機械語のみを解釈します。コンパイルしてしまえば同じ0と1の羅列になるようなプログラムでも、その書き方は無限に存在します。無限にある書き方の中であなたがなぜその書き方を選択したのかは大変重要です。これはもちろんあなた自身にとっても重要なのですが、開発チームの他のメンバーにとっても重要ですし、将来コードを読み直した自分にとっても重要です。
 
-You should strive not just to write programs that work correctly, but programs that make sense when examined. You can go a long way in that effort by choosing good names for your variables (see "Variables") and functions (see "Functions").
+正しく動作するプログラムを書くことは大切ですが、コードを読んだときに意味が分かるプログラムを書くことも大切です。読者の皆さんは今後、変数(詳細は「変数」の項を参照)や関数(詳細は「関数」の項を参照)により分かりやすい名前を付けることに頭を悩ませ続けることになるでしょう。
 
-But another important part is code comments. These are bits of text in your program that are inserted purely to explain things to a human. The interpreter/compiler will always ignore these comments.
+分かりやすいコードを書くにあたってもう一つ大切なものは、コードコメントです。コードコメントとは、人間にコードの説明をするためにコード中に挿入するテキストのことです。インタープリタやコンパイラはこれらのコメントを無視します。
 
-There are lots of opinions on what makes well-commented code; we can't really define absolute universal rules. But some observations and guidelines are quite useful:
+良いコメントとは何かという議論には様々な意見があり、完全に絶対的かつ網羅的なルールを定義することは不可能です。しかし、次のようないくつかの意見やガイドラインは非常に有用です。
 
-* Code without comments is suboptimal.
-* Too many comments (one per line, for example) is probably a sign of poorly written code.
-* Comments should explain *why*, not *what*. They can optionally explain *how* if that's particularly confusing.
+* コメントの無いコードは最適ではありません。
+* 過剰なコメント(例えば1行に1つコメントを入れるなど)は下手なコーディングのサインかもしれません。
+* コメントは *なぜ* を説明すべきで、*何を* したのかを説明するべきではありません。特に分かりづらいコードには *どのように* を説明しても良いでしょう。
 
-In JavaScript, there are two types of comments possible: a single-line comment and a multiline comment.
+JavaScriptでは、1行コメントと複数行コメントという2種類のコメント形式があります。
 
-Consider:
+次のコード例を見てみましょう。
 
 ```js
-// This is a single-line comment
+// これは1行のコメントです。
 
-/* But this is
-       a multiline
-             comment.
-                      */
+/* これは
+       複数行の
+             コメントです。
+                            */
 ```
 
-The `//` single-line comment is appropriate if you're going to put a comment right above a single statement, or even at the end of a line. Everything on the line after the `//` is treated as the comment (and thus ignored by the compiler), all the way to the end of the line. There's no restriction to what can appear inside a single-line comment.
+`//` は1行のコメントを表し、文の右側や行末にコメントを付けたいときに向いています。`//` の後に書かれたものは行が終わるまでがコメントとして扱われます(つまり、コンパイラに無視されます)。1行のコメントの中には何を書いても構いません。
 
-Consider:
+次にように使うのが一般的です。
 
 ```js
-var a = 42;		// 42 is the meaning of life
+var a = 42;		// 42 は残りライフを表す
 ```
 
-The `/* .. */` multiline comment is appropriate if you have several lines worth of explanation to make in your comment.
+`/* .. */` は複数行のコメントを表し、コードの説明をするにあたって複数行が必要な場合に向いています。
 
-Here's a common usage of multiline comments:
+
+次のコード例は複数行のコメントの一般的な使い方です。
 
 ```js
-/* The following value is used because
-   it has been shown that it answers
-   every question in the universe. */
+/* 次の変数は、生命、宇宙、そし
+   て万物についての究極の疑問の
+   答えを表すために使用 */
 var a = 42;
 ```
 
-It can also appear anywhere on a line, even in the middle of a line, because the `*/` ends it. For example:
+この形式のコメントは、行のどこにでも書くことができ、行の真ん中に書くこともできます。これは `*/` がコメントの終端であることを表しているためです。例えば、
 
 ```js
-var a = /* arbitrary value */ 42;
+var a = /* 任意の値 */ 42;
 
 console.log( a );	// 42
 ```
 
-The only thing that cannot appear inside a multiline comment is a `*/`, because that would be interpreted to end the comment.
+というコメントも書くことができます。
 
-You will definitely want to begin your learning of programming by starting off with the habit of commenting code. Throughout the rest of this chapter, you'll see I use comments to explain things, so do the same in your own practice. Trust me, everyone who reads your code will thank you!
+複数行のコメントの中に唯一書いてはいけないものは `*/` です。`*/` を書くとコメントが終了してしまいます。
+
+読者の皆さんはコメントを書く習慣を付けつつプログラミングの学習を始めたいと思っていることでしょう。このチャプターの残りの部分では、コード例にコメントを入れていきます。皆さんも練習として、同じようにコメントを書くようにしてください。筆者を信じてください。皆さんのコードを読んだ人はあなたに感謝してくれるはずです！
 
 ## Variables
 
