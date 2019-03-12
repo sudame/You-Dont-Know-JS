@@ -215,9 +215,9 @@ console.log( a );	// 42
 
 ## 値と型
 
-携帯電話ショップで、ある携帯電話の価格を店員に聞いたとしましょう。店員は「98,000」(¥98,000)と答えました。ここでは、店員はあなたが携帯電話を買うために必要な金額を数値で答えました。もしあなたが2つ携帯電話を必要であれば、暗算で金額を2倍するでしょう。¥196,000が支払うべき金額です。
+携帯電話ショップで、ある携帯電話の価格を店員に聞いたとしましょう。店員は「98,000」($98,000)と答えました。ここでは、店員はあなたが携帯電話を買うために必要な金額を数値で答えました。もしあなたが2つ携帯電話を必要であれば、暗算で金額を2倍するでしょう。$196,000が支払うべき金額です。
 
-同じ店員が似たような携帯電話を持ってきて、「無料」と言ったとしましょう。今回は店員は数値で金額を教えるのではなく、「無料」という文字列で金額(¥0)を伝えてくれました。
+同じ店員が似たような携帯電話を持ってきて、「無料」と言ったとしましょう。今回は店員は数値で金額を教えるのではなく、「無料」という文字列で金額($0)を伝えてくれました。
 
 次に、携帯電話に充電器が付いてくるのか聞いてみましょう。店員の回答は「はい」か「いいえ」であるはずです。
 
@@ -340,19 +340,21 @@ console.log( a );	// 42
 
 読者の皆さんはコメントを書く習慣を付けつつプログラミングの学習を始めたいと思っていることでしょう。このチャプターの残りの部分では、コード例にコメントを入れていきます。皆さんも練習として、同じようにコメントを書くようにしてください。筆者を信じてください。皆さんのコードを読んだ人はあなたに感謝してくれるはずです！
 
-## Variables
+## 変数
 
-Most useful programs need to track a value as it changes over the course of the program, undergoing different operations as called for by your program's intended tasks.
+有用なプログラムのほとんどは、プログラム中の他の部分が変化している間にも値を保持し続ける必要があります。
 
-The easiest way to go about that in your program is to assign a value to a symbolic container, called a *variable* -- so called because the value in this container can *vary* over time as needed.
+そのようなことを実現する最も簡単な方法は、値に何らかの印の付いた箱のようなものを割り当てることです。「何らかの印の付いた箱のようなもの」は *変数* と呼ばれています。*変* 数の名前の由来は、箱が保持する値は状況によって *変* 化させることができることによります。
 
-In some programming languages, you declare a variable (container) to hold a specific type of value, such as `number` or `string`. *Static typing*, otherwise known as *type enforcement*, is typically cited as a benefit for program correctness by preventing unintended value conversions.
+いくつかのプログラミング言語では、変数を定義するときに `number` や `string` といった型を指定して定義しなければなりません。こういったプログラミング言語は `静的型付け` や `型強制` と呼ばれます。静的型付けは特に、意図しない値の変化を防止することでプログラムを正確にするのに役立ちます。
 
-Other languages emphasize types for values instead of variables. *Weak typing*, otherwise known as *dynamic typing*, allows a variable to hold any type of value at any time. It's typically cited as a benefit for program flexibility by allowing a single variable to represent a value no matter what type form that value may take at any given moment in the program's logic flow.
+(訳注: ここで言う *型強制* は *type enforcement* です。型の変換で触れた *型強制* は *type coercion* で、全く別の概念です。良い訳語をお待ちしております。)
 
-JavaScript uses the latter approach, *dynamic typing*, meaning variables can hold values of any *type* without any *type* enforcement.
+静的型付け言語以外の言語では、変数に対する型よりも値に対する型を重視します。これは *弱い型付け* や *動的型付け* と呼ばれ、変数にはいつでもいかなる型の値も格納できます。動的型付け言語ではプログラムの論理的な流れの中で、どのような状態においても値を一つの変数で表すことができるため、特にプログラムの柔軟性を向上するのに役立ちます。
 
-As mentioned earlier, we declare a variable using the `var` statement -- notice there's no other *type* information in the declaration. Consider this simple program:
+JavaScriptは後者の方式、すなわち *動的型付け* を採用していて、変数が格納する値の *型* を強制することはなく、どのような *型* でも格納できます。
+
+既に触れているように、変数を定義するときは `var` 式を用います。変数を定義するときには *型* の情報を一切書いていないことに注意してください。次の簡単なコード例をご覧ください。
 
 ```js
 var amount = 99.99;
@@ -361,33 +363,33 @@ amount = amount * 2;
 
 console.log( amount );		// 199.98
 
-// convert `amount` to a string, and
-// add "$" on the beginning
+// `amount`をstring型に変換し、
+// "$"を頭に付ける
 amount = "$" + String( amount );
 
 console.log( amount );		// "$199.98"
 ```
 
-The `amount` variable starts out holding the number `99.99`, and then holds the `number` result of `amount * 2`, which is `199.98`.
+変数 `amount` は始め `99.99` という数字を持っていて、`number` 型です。従って、`amount * 2` の演算結果は `199.98` になります。
 
-The first `console.log(..)` command has to *implicitly* coerce that `number` value to a `string` to print it out.
+一つ目の `console.log(..)` コマンドは *暗黙的に* `number` 型の値を `string` 型の値に変換して出力します。 
 
-Then the statement `amount = "$" + String(amount)` *explicitly* coerces the `199.98` value to a `string` and adds a `"$"` character to the beginning. At this point, `amount` now holds the `string` value `"$199.98"`, so the second `console.log(..)` statement doesn't need to do any coercion to print it out.
+式 `amount = "$" + String(amount)` では *明示的に* `199.98` という値を `string` 型に変換し、頭に `"$"` を加えています。この時点で `amount` は `string` 型の値 `"$199.98"` を保持しているため、二つ目の `console.log(..)` は値を出力するために型の変換をする必要がありません。
 
-JavaScript developers will note the flexibility of using the `amount` variable for each of the `99.99`, `199.98`, and the `"$199.98"` values. Static-typing enthusiasts would prefer a separate variable like `amountStr` to hold the final `"$199.98"` representation of the value, because it's a different type.
+JavaScript開発者は変数 `amount` で `99.99`、`199.98`、`"$199.98"` を扱うとき、柔軟性を利用して変数の定義は1つのみとするでしょう。一方、静的型付け言語が好きな人は、最後の `"$199.98"` は型が他と異なるため、`amountStr` といった別の変数を用意することを好むはずです。
 
-Either way, you'll note that `amount` holds a running value that changes over the course of the program, illustrating the primary purpose of variables: managing program *state*.
+何にせよ、`amount` はプログラムを通して変化する値を保持しており、変数を用いる本来の目的であるプログラムの *状態* を表すという役割を果たしていることが分かるはずです。
 
-In other words, *state* is tracking the changes to values as your program runs.
+言い換えれば、*状態* というのはプログラムが進むにつれて値が変化していく様を捉えることだと言うこともできます。
 
-Another common usage of variables is for centralizing value setting. This is more typically called *constants*, when you declare a variable with a value and intend for that value to *not change* throughout the program.
+変数の他の一般的な変数の使い方としては、値の設定を分かりやすくまとめるというものがあります。このことは特に `定数` と呼ばれ、変数でありながらプログラムを通して `変化しない` ものを定義することを意味します。
 
-You declare these *constants*, often at the top of a program, so that it's convenient for you to have one place to go to alter a value if you need to. By convention, JavaScript variables as constants are usually capitalized, with underscores `_` between multiple words.
+`定数` は多くの場合プログラムの一番最初に定義します。これは必要なときに定数を別の値で書き換えるのに便利だからです。JavaScriptでは普通、定数の変数名を全て大文字にし、単語の区切りは `_` で表します。
 
-Here's a silly example:
+例を見てみましょう。
 
 ```js
-var TAX_RATE = 0.08;	// 8% sales tax
+var TAX_RATE = 0.08;	// 8% の消費税
 
 var amount = 99.99;
 
@@ -399,14 +401,14 @@ console.log( amount );				// 215.9784
 console.log( amount.toFixed( 2 ) );	// "215.98"
 ```
 
-**Note:** Similar to how `console.log(..)` is a function `log(..)` accessed as an object property on the `console` value, `toFixed(..)` here is a function that can be accessed on `number` values. JavaScript `number`s aren't automatically formatted for dollars -- the engine doesn't know what your intent is and there's no type for currency. `toFixed(..)` lets us specify how many decimal places we'd like the `number` rounded to, and it produces the `string` as necessary.
+**注意:** `console.log(..)` が `console` のオブジェクトプロパティとして `log(..)` 関数にアクセスしているのと似たように、コード例にある `toFixed(..)` は `number` 型の値からアクセスできる関数です。JavaScriptの `number` 型は当然、自動的にドル表記にはしてくれません。JavaScriptエンジンはプログラマの意図を汲みませんし、JavaScriptには通貨を扱う型は存在しません。`toFixed(..)` は小数点第何位まで四捨五入を行うのかを設定し、四捨五入結果を `string` 型で返してくれる関数です。
 
-The `TAX_RATE` variable is only *constant* by convention -- there's nothing special in this program that prevents it from being changed. But if the city raises the sales tax rate to 9%, we can still easily update our program by setting the `TAX_RATE` assigned value to `0.09` in one place, instead of finding many occurrences of the value `0.08` strewn throughout the program and updating all of them.
+`TAX_RATE` 変数は *定数* として定義していますが、これはただ慣例によるものです。というのも、プログラム中で `TAX_RATE` が書き換わることを防止するような特別なことは一切していないためです。国が消費税を10%に引き上げるときには、`TAX_RATE` を `0.10` に書き換えれば良いだけで、プログラムの更新は簡単に済みます。もし定数を使わ無かった場合、プログラム中に多数あるであろう `0.08` を全て `0.10` に書き換えなければいけません。
 
-The newest version of JavaScript at the time of this writing (commonly called "ES6") includes a new way to declare *constants*, by using `const` instead of `var`:
+本書を執筆している時点で最新バージョンのJavaScript(一般的に「ES6」と呼ばれています)は *定数* を定義するときに `var` の代わりに `const` を用いるという新しい方法を採用しています。
 
 ```js
-// as of ES6:
+// ES6にて:
 const TAX_RATE = 0.08;
 
 var amount = 99.99;
@@ -414,11 +416,11 @@ var amount = 99.99;
 // ..
 ```
 
-Constants are useful just like variables with unchanged values, except that constants also prevent accidentally changing value somewhere else after the initial setting. If you tried to assign any different value to `TAX_RATE` after that first declaration, your program would reject the change (and in strict mode, fail with an error -- see "Strict Mode" in Chapter 2).
+`const` キーワードを使って定義した定数は(`var` キーワードを用いて定義した)値が変更されない変数と同じように有用です。異なるのは定数の初期設定が誤って他の箇所で書き換えられてしまうことを防止するということです。`TAX_VALUE` を最初に定義した後に他の値を代入しようとしても、プログラムは値の変更を拒絶します。(厳密モードではエラーが発生します。詳しくは「厳密モード」を参照。)
 
-By the way, that kind of "protection" against mistakes is similar to the static-typing type enforcement, so you can see why static types in other languages can be attractive!
+ところで、`const` キーワードで定義する定数のような「保護」機能でミスを防止することは静的型付け言語を使うことに似ています。なぜ静的型付け言語が魅力的なのかを垣間見ることができますね！
 
-**Note:** For more information about how different values in variables can be used in your programs, see the *Types & Grammar* title of this series.
+**注意:** プログラム内で変数のさまざまな値がどのように使われるのかについての詳細は *Types & Grammar* をご覧ください。
 
 ## Blocks
 
