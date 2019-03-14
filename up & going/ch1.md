@@ -422,37 +422,37 @@ var amount = 99.99;
 
 **注意:** プログラム内で変数のさまざまな値がどのように使われるのかについての詳細は *Types & Grammar* をご覧ください。
 
-## Blocks
+## ブロック
 
-The phone store employee must go through a series of steps to complete the checkout as you buy your new phone.
+携帯電話ショップの店員は、あなたが携帯電話を購入するためにいくつかのステップを踏まなければなりません。
 
-Similarly, in code we often need to group a series of statements together, which we often call a *block*. In JavaScript, a block is defined by wrapping one or more statements inside a curly-brace pair `{ .. }`. Consider:
+同じように、プログラムのコードでも一連の文をまとめる必要が出てくる場面は多くあります。このような文のまとまりのことを *ブロック* と言います。JavaScriptでは、ブロックは1行以上の文を中括弧 `{ .. }` で囲むことで定義できます。コード例を見てみましょう。
 
 ```js
 var amount = 99.99;
 
-// a general block
+// 一般的なブロック
 {
 	amount = amount * 2;
 	console.log( amount );	// 199.98
 }
 ```
 
-This kind of standalone `{ .. }` general block is valid, but isn't as commonly seen in JS programs. Typically, blocks are attached to some other control statement, such as an `if` statement (see "Conditionals") or a loop (see "Loops"). For example:
+このような独立した `{ .. }` というブロックは文法上間違いはありませんが、JSプログラムではあまり見かけません。一般的には、ブロックは `if` 文(詳しくは「条件」の項を参照)やループ(詳しくは「ループ」の項を参照)といった他の制御文とともに使います。例えば、次のようなコードがあります。
 
 ```js
 var amount = 99.99;
 
-// is amount big enough?
-if (amount > 10) {			// <-- block attached to `if`
+// amountは十分大きいか？
+if (amount > 10) {		// <-- `if` とともにブロックが使われている
 	amount = amount * 2;
 	console.log( amount );	// 199.98
 }
 ```
 
-We'll explain `if` statements in the next section, but as you can see, the `{ .. }` block with its two statements is attached to `if (amount > 10)`; the statements inside the block will only be processed if the conditional passes.
+`if` 文については次のセクションで解説しますが、2つの文を持った `{ .. }` ブロックが `if(amount > 10);` にくっついているのが見て取れると思います。ブロック内の文は条件に合致したときのみ実行されます。
 
-**Note:** Unlike most other statements like `console.log(amount);`, a block statement does not need a semicolon (`;`) to conclude it.
+**注意:** `console.log(amount);` などの他の文と違い、ブロック文は文末にセミコロン(`;`)を付ける必要はありません。
 
 ## Conditionals
 
